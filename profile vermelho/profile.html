@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Profissional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #C8102E;
+  --red-dark: #9B0C23;
+  --red-light: #E8192E;
+  --red-pale: #FFF0F2;
+  --red-muted: #F5D0D6;
+  --white: #FFFFFF;
+  --off-white: #FAFAF8;
+  --cream: #F5F2EE;
+  --charcoal: #1A1A1A;
+  --dark: #0F0F0F;
+  --mid: #5A5A5A;
+  --light: #9A9A9A;
+  --border: #E8E4DF;
+  --border-red: rgba(200,16,46,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width:3px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--red); }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index:100;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 4rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--charcoal);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--red); }
+
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a {
+  font-size:0.82rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color: var(--mid);
+  text-decoration:none;
+  transition: color 0.25s;
+  position: relative;
+}
+.nav-links a::after {
+  content:'';
+  position:absolute;
+  bottom:-4px; left:0; right:0;
+  height:2px;
+  background: var(--red);
+  transform:scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-links a:hover::after { transform:scaleX(1); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+}
+
+.hero-left {
+  background: var(--charcoal);
+  padding: 7rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--red);
+}
+
+.hero-left::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; right: -120px;
+  width: 350px; height: 350px;
+  border: 1px solid rgba(200,16,46,0.2);
+  border-radius: 50%;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+  letter-spacing: -1px;
+}
+
+.hero-name em {
+  color: var(--red);
+  font-style: italic;
+  display: block;
+}
+
+.hero-role {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s forwards;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.9s forwards;
+  flex-wrap: wrap;
+}
+
+.btn-red {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-red:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,16,46,0.35); }
+
+.btn-outline-white {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.6); color: white; }
+
+.hero-right {
+  background: var(--white);
+  padding: 7rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  border-left: 1px solid var(--border);
+}
+
+.hero-stat {
+  border-left: 3px solid var(--red);
+  padding-left: 1.5rem;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--charcoal);
+  letter-spacing: -2px;
+}
+.hero-stat-num span { color: var(--red); }
+.hero-stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-top: 0.3rem;
+}
+
+.hero-quote {
+  background: var(--red-pale);
+  border-left: 4px solid var(--red);
+  padding: 1.5rem;
+}
+.hero-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--red-dark);
+  line-height: 1.7;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+}
+
+.section-wrap.full {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* ─── SECTION HEADER ─── */
+.sec-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.sec-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 0.6rem;
+}
+
+/* ─── SOBRE ─── */
+#sobre { background: var(--white); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+@media(max-width:900px){ .about-grid{ grid-template-columns:1fr; } }
+
+.about-photo-wrap {
+  position: relative;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.3s;
+  position: relative;
+}
+.about-photo:hover { border-color: var(--red); }
+.about-photo::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--red);
+}
+.about-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.about-photo svg { opacity: 0.25; width: 64px; height: 64px; }
+.photo-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+#photo-upload { display:none; }
+
+.about-badge {
+  position: absolute;
+  bottom: -1.5rem; right: -1.5rem;
+  width: 90px; height: 90px;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about-badge-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+}
+.about-badge-label {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+.about-fields { display:flex; flex-direction:column; gap:2rem; }
+
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+@media(max-width:600px){ .field-row{ grid-template-columns:1fr; } }
+
+/* ─── EDITABLE FIELDS ─── */
+.field-group { display:flex; flex-direction:column; gap:0.4rem; }
+.field-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+}
+.ef {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--charcoal);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.25s;
+  font-weight: 400;
+}
+.ef:focus { border-color: var(--red); }
+textarea.ef {
+  resize: vertical;
+  min-height: 100px;
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  border-radius: 2px;
+}
+textarea.ef:focus { border-color: var(--red); }
+
+/* ─── HABILIDADES ─── */
+#habilidades { background: var(--charcoal); }
+#habilidades .sec-title { color: var(--white); }
+#habilidades .sec-num { color: var(--red); }
+#habilidades .sec-line { background: rgba(255,255,255,0.1); }
+#habilidades .sec-header { border-color: rgba(255,255,255,0.1); }
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+}
+@media(max-width:700px){ .skills-columns{ grid-template-columns:1fr; } }
+
+.skill-row {
+  background: var(--charcoal);
+  padding: 1.6rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  transition: background 0.2s;
+  position: relative;
+  cursor: default;
+}
+.skill-row:hover { background: rgba(200,16,46,0.07); }
+
+.skill-row-left { display:flex; flex-direction:column; gap:0.8rem; }
+
+.skill-name-inp {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.skill-name-inp:focus { border-color: rgba(200,16,46,0.5); cursor:text; }
+
+.skill-bar-bg {
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: var(--red);
+  transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
+  width: 0;
+}
+
+.skill-pct {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: -1px;
+  min-width: 60px;
+  text-align: right;
+}
+.skill-pct-inp {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.2);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 70px;
+  text-align: right;
+  cursor: pointer;
+}
+.skill-pct-inp:focus { color: var(--red); }
+
+.skill-del {
+  position:absolute; top:0.5rem; right:0.5rem;
+  background:transparent; border:none;
+  color:rgba(255,255,255,0.2); font-size:0.75rem;
+  cursor:pointer; opacity:0; transition:opacity 0.2s;
+  padding:4px 8px;
+}
+.skill-row:hover .skill-del { opacity:1; }
+.skill-del:hover { color:var(--red); }
+
+.add-skill-btn {
+  grid-column: 1/-1;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 1px;
+}
+.add-skill-btn:hover { border-color:var(--red); color:var(--red); }
+
+/* ─── TRAJETÓRIA ─── */
+#trajetoria { background: var(--off-white); }
+
+.timeline-wrap {
+  display: grid;
+  grid-template-columns: 1px 1fr;
+  gap: 0 3rem;
+}
+.timeline-spine {
+  background: var(--border);
+  position: relative;
+}
+.timeline-spine::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background: var(--red);
+}
+
+.timeline-items { display:flex; flex-direction:column; gap:0; }
+
+.tl-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  position: relative;
+  transition: background 0.2s;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -3.5rem;
+  top: 2.8rem;
+  width: 12px; height: 12px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  transition: border-color 0.2s, background 0.2s;
+}
+.tl-item:first-child::before { border-color: var(--red); background: var(--red); }
+.tl-item:hover::before { border-color: var(--red); }
+
+.tl-date-inp {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--red);
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  margin-top: 0.15rem;
+  cursor: pointer;
+}
+.tl-date-inp:focus { border-color: var(--red); cursor:text; }
+
+.tl-body { display:flex; flex-direction:column; gap:0.5rem; }
+.tl-title-inp {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}
+.tl-title-inp:focus { border-color: var(--border); cursor:text; }
+
+.tl-sub-inp {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+.tl-sub-inp:focus { border-color: var(--border); cursor:text; }
+
+.tl-desc-inp {
+  font-size: 0.92rem;
+  color: var(--mid);
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.75;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
+.tl-desc-inp:focus { border-color: var(--border); padding: 0.6rem; cursor:text; }
+
+.tl-del {
+  position:absolute; top:2rem; right:0;
+  background:transparent; border:none;
+  color:var(--light); font-size:0.72rem;
+  cursor:pointer; opacity:0; transition:opacity 0.2s;
+  padding:4px 8px;
+  font-family:'DM Mono',monospace;
+  letter-spacing:0.05em;
+}
+.tl-item:hover .tl-del { opacity:1; }
+.tl-del:hover { color:var(--red); }
+
+.add-tl-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 1rem;
+  width: 100%;
+}
+.add-tl-btn:hover { border-color:var(--red); color:var(--red); }
+
+/* ─── HOBBIES ─── */
+#hobbies { background: var(--red); }
+#hobbies .sec-title { color: var(--white); }
+#hobbies .sec-num { color: rgba(255,255,255,0.6); }
+#hobbies .sec-line { background: rgba(255,255,255,0.2); }
+#hobbies .sec-header { border-color: rgba(255,255,255,0.2); }
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  background: rgba(0,0,0,0.1);
+}
+
+.hobby-card {
+  background: var(--red);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.25s;
+  cursor: default;
+  position: relative;
+}
+.hobby-card:hover { background: var(--red-dark); }
+
+.hobby-emoji-inp {
+  font-size: 2.2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.hobby-card:hover .hobby-emoji-inp { transform: scale(1.1); }
+
+.hobby-label-inp {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.hobby-label-inp:focus { border-color: rgba(255,255,255,0.4); color:white; }
+
+.hobby-del {
+  position:absolute; top:0.5rem; right:0.5rem;
+  background:transparent; border:none;
+  color:rgba(255,255,255,0.3); font-size:0.7rem;
+  cursor:pointer; opacity:0; transition:opacity 0.2s;
+}
+.hobby-card:hover .hobby-del { opacity:1; }
+.hobby-del:hover { color:white; }
+
+.add-hobby-btn {
+  background: rgba(0,0,0,0.1);
+  border: none;
+  color: rgba(255,255,255,0.4);
+  font-family: 'DM Mono', monospace;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  padding: 2rem;
+  text-align: center;
+}
+.add-hobby-btn:hover { background:rgba(0,0,0,0.2); color:white; }
+
+/* ─── OBJETIVOS ─── */
+#objetivos { background: var(--white); }
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.goal-card {
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  transition: all 0.3s;
+  position: relative;
+  cursor: default;
+  background: var(--white);
+  overflow: hidden;
+}
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.goal-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
+.goal-card:hover::before { transform: scaleX(1); }
+
+.goal-icon-inp {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: block;
+  width: 60px;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+}
+.goal-title-inp {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}
+.goal-title-inp:focus { border-color: var(--border); cursor:text; }
+.goal-desc-inp {
+  font-size: 0.9rem;
+  color: var(--mid);
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.75;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.goal-desc-inp:focus { border-color: var(--border); padding: 0.5rem; cursor:text; }
+
+.goal-del {
+  position:absolute; top:1rem; right:1rem;
+  background:transparent; border:none;
+  color:var(--light); font-size:0.72rem;
+  cursor:pointer; opacity:0; transition:opacity 0.2s;
+  font-family:'DM Mono',monospace;
+}
+.goal-card:hover .goal-del { opacity:1; }
+.goal-del:hover { color:var(--red); }
+
+.add-goal-btn {
+  border: 1px dashed var(--border);
+  background: transparent;
+  color: var(--light);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.add-goal-btn:hover { border-color:var(--red); color:var(--red); }
+
+/* ─── CONTATO ─── */
+#contato { background: var(--charcoal); }
+#contato .sec-title { color: var(--white); }
+#contato .sec-num { color: var(--red); }
+#contato .sec-line { background: rgba(255,255,255,0.1); }
+#contato .sec-header { border-color: rgba(255,255,255,0.1); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+@media(max-width:800px){ .contact-layout{ grid-template-columns:1fr; } }
+
+.contact-intro {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.links-list { display:flex; flex-direction:column; gap:0.5rem; }
+
+.link-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.25s;
+  position: relative;
+  cursor: default;
+}
+.link-row:hover { border-color: rgba(200,16,46,0.4); background: rgba(200,16,46,0.05); }
+
+.link-emoji-inp {
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 36px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.link-label-inp {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  width: 100px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.link-label-inp:focus { border-color: rgba(255,255,255,0.2); color:white; cursor:text; }
+.link-url-inp {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.25);
+  background: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+  cursor: pointer;
+}
+.link-url-inp:focus { color:rgba(255,255,255,0.6); cursor:text; }
+.link-del {
+  background:transparent; border:none;
+  color:rgba(255,255,255,0.15); font-size:0.7rem;
+  cursor:pointer; opacity:0; transition:opacity 0.2s;
+}
+.link-row:hover .link-del { opacity:1; }
+.link-del:hover { color:var(--red); }
+
+.add-link-btn {
+  border: 1px dashed rgba(255,255,255,0.1);
+  background: transparent;
+  color: rgba(255,255,255,0.25);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.add-link-btn:hover { border-color:var(--red); color:var(--red); }
+
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem;
+}
+.contact-card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+.contact-card-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--dark);
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+.footer-red {
+  width: 32px; height: 3px;
+  background: var(--red);
+}
+
+/* ─── SAVE BAR ─── */
+.save-bar {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.save-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  background: var(--red);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(200,16,46,0.3);
+}
+.save-btn:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,16,46,0.4); }
+.save-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  opacity: 0;
+  transition: opacity 0.4s;
+  background: var(--white);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--red-muted);
+}
+.save-status.show { opacity: 1; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── HINT ─── */
+.edit-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--light);
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+.edit-hint span { color: var(--red); }
+
+@media(max-width:768px){
+  nav { padding: 0 1.5rem; }
+  #hero { grid-template-columns: 1fr; }
+  .hero-left, .hero-right { padding: 4rem 2rem; }
+  .section-wrap { padding: 4rem 1.5rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  nav .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#hero">Port<span>.</span>fólio</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#habilidades">Skills</a></li>
+    <li><a href="#trajetoria">Trajetória</a></li>
+    <li><a href="#hobbies">Hobbies</a></li>
+    <li><a href="#objetivos">Objetivos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Portfólio Pessoal · 2025</div>
+    <h1 class="hero-name">
+      <input id="hero-name" class="ef" value="Seu Nome" style="font-family:'Playfair Display',serif;font-size:inherit;font-weight:900;color:white;width:100%;letter-spacing:-1px;border-color:transparent;padding:0;" />
+      <em><input id="hero-title" class="ef" value="Profissional." style="font-family:'Playfair Display',serif;font-size:inherit;font-weight:700;color:var(--red);width:100%;font-style:italic;border-color:transparent;padding:0;" /></em>
+    </h1>
+    <div class="hero-role">
+      <input id="hero-role" class="ef" value="Desenvolvedor · Tecnologia · Inovação" style="color:rgba(255,255,255,0.5);font-size:1rem;letter-spacing:0.05em;border-color:transparent;" />
+    </div>
+    <div class="hero-cta">
+      <a class="btn-red" href="#trajetoria">Ver Trajetória</a>
+      <a class="btn-outline-white" href="#contato">Contato</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hero-stat-num"><input id="stat1-num" class="ef" value="3" style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--charcoal);letter-spacing:-2px;width:60px;border-color:transparent;" /><span style="color:var(--red);">+</span></div>
+      <div class="hero-stat-label"><input id="stat1-label" class="ef" value="Anos de Experiência" style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);border-color:transparent;" /></div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><input id="stat2-num" class="ef" value="12" style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--charcoal);letter-spacing:-2px;width:60px;border-color:transparent;" /><span style="color:var(--red);">+</span></div>
+      <div class="hero-stat-label"><input id="stat2-label" class="ef" value="Projetos Concluídos" style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);border-color:transparent;" /></div>
+    </div>
+    <div class="hero-quote">
+      <p><textarea id="hero-quote" rows="2" class="ef" style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--red-dark);border-color:transparent;padding:0;background:transparent;min-height:60px;">"Escreva aqui uma frase ou citação que define você."</textarea></p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" style="background:var(--white);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num">01 / Sobre</div><h2 class="sec-title">Quem Sou Eu</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-photo-wrap">
+        <div class="about-photo" id="avatar-box" onclick="document.getElementById('photo-upload').click()" title="Clique para adicionar foto">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="12" stroke="#C8102E" stroke-width="1.5"/><path d="M8 56c0-13.3 10.7-24 24-24s24 10.7 24 24" stroke="#C8102E" stroke-width="1.5"/></svg>
+          <span class="photo-hint">Clique para adicionar foto</span>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-text"><input id="badge-num" class="ef" value="25" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:white;width:50px;border:none;text-align:center;padding:0;background:transparent;" /></div>
+          <div class="about-badge-label">Anos</div>
+        </div>
+        <input type="file" id="photo-upload" accept="image/*" onchange="loadPhoto(event)">
+      </div>
+      <div class="about-fields">
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label">Nome Completo</label>
+            <input class="ef" id="about-name" value="Seu Nome Completo" />
+          </div>
+          <div class="field-group">
+            <label class="field-label">Localização</label>
+            <input class="ef" id="about-local" value="São Paulo, Brasil" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label">Área de Atuação</label>
+            <input class="ef" id="about-area" value="Tecnologia / Programação" />
+          </div>
+          <div class="field-group">
+            <label class="field-label">Disponibilidade</label>
+            <input class="ef" id="about-avail" value="Aberto a oportunidades" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Sobre Mim</label>
+          <textarea class="ef" id="about-bio" rows="6">Conte sua história aqui. De onde você vem, o que te trouxe à área de tecnologia, quais experiências moldaram quem você é. Seja autêntico — este é o seu espaço para se apresentar da forma como você quiser ao mundo.</textarea>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Rotina / Interesses Atuais</label>
+          <textarea class="ef" id="about-routine" rows="3">Descreva o que você está estudando, desenvolvendo ou praticando no momento. Seus projetos atuais, cursos, ou áreas de crescimento pessoal.</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades" style="background:var(--charcoal);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num" style="color:var(--red);">02 / Skills</div><h2 class="sec-title" style="color:white;">Habilidades</h2></div>
+      <div class="sec-line" style="background:rgba(255,255,255,0.08);"></div>
+    </div>
+    <div class="skills-columns reveal" id="skills-container"></div>
+    <button class="add-skill-btn" onclick="addSkill()">+ Adicionar habilidade</button>
+  </div>
+</section>
+
+<!-- TRAJETÓRIA -->
+<section id="trajetoria" style="background:var(--off-white);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num">03 / Trajetória</div><h2 class="sec-title">Minha Jornada</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="timeline-wrap reveal">
+      <div class="timeline-spine"></div>
+      <div class="timeline-items" id="timeline-container"></div>
+    </div>
+    <button class="add-tl-btn" onclick="addTimeline()">+ Adicionar marco</button>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies" style="background:var(--red);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num" style="color:rgba(255,255,255,0.5);">04 / Hobbies</div><h2 class="sec-title" style="color:white;">Interesses Pessoais</h2></div>
+      <div class="sec-line" style="background:rgba(255,255,255,0.2);"></div>
+    </div>
+    <div class="hobbies-grid reveal" id="hobbies-container"></div>
+    <button class="add-hobby-btn" onclick="addHobby()" style="margin-top:1px;width:100%;">+</button>
+  </div>
+</section>
+
+<!-- OBJETIVOS -->
+<section id="objetivos" style="background:var(--white);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num">05 / Futuro</div><h2 class="sec-title">Objetivos & Sonhos</h2></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="goals-grid reveal" id="goals-container"></div>
+    <div class="edit-hint">Clique em qualquer campo para editar · <span>Salvar</span> grava tudo no navegador</div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" style="background:var(--charcoal);">
+  <div class="section-wrap">
+    <div class="sec-header reveal">
+      <div><div class="sec-num" style="color:var(--red);">06 / Contato</div><h2 class="sec-title" style="color:white;">Vamos Conversar</h2></div>
+      <div class="sec-line" style="background:rgba(255,255,255,0.08);"></div>
+    </div>
+    <div class="contact-layout reveal">
+      <div>
+        <p class="contact-intro"><textarea id="contact-intro" rows="3" class="ef" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:rgba(255,255,255,0.6);border-color:transparent;background:transparent;min-height:80px;width:100%;">"Estou aberto a novas oportunidades, colaborações e projetos interessantes. Entre em contato!"</textarea></p>
+        <div class="links-list" id="links-container"></div>
+        <button class="add-link-btn" onclick="addLink()">+ Adicionar link</button>
+      </div>
+      <div class="contact-aside">
+        <div class="contact-card">
+          <div class="contact-card-label">Área Principal</div>
+          <div class="contact-card-value"><input class="ef" id="cc-area" value="Tecnologia" style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:white;border-color:rgba(255,255,255,0.1);" /></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Localização</div>
+          <div class="contact-card-value"><input class="ef" id="cc-local" value="Brasil" style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:white;border-color:rgba(255,255,255,0.1);" /></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Status Atual</div>
+          <div class="contact-card-value"><input class="ef" id="cc-status" value="Disponível" style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--red);border-color:rgba(255,255,255,0.1);" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© <span id="fyear"></span> — Portfólio Pessoal. Todos os direitos reservados.</span>
+  <div class="footer-red"></div>
+</footer>
+
+<!-- SAVE BAR -->
+<div class="save-bar">
+  <div class="save-status" id="save-status">✓ Dados salvos</div>
+  <button class="save-btn" onclick="saveAll()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+    Salvar
+  </button>
+</div>
+
+<script>
+document.getElementById('fyear').textContent = new Date().getFullYear();
+
+const DEF = {
+  skills: [
+    {name:'HTML / CSS', lvl:80},
+    {name:'JavaScript', lvl:65},
+    {name:'Python', lvl:55},
+    {name:'Git / GitHub', lvl:70},
+    {name:'React', lvl:40},
+    {name:'SQL', lvl:50},
+  ],
+  timeline: [
+    {date:'2022', title:'Início na Programação', sub:'Primeiro contato com código', desc:'Descreva como foi sua introdução ao mundo da tecnologia e o que te motivou a começar.'},
+    {date:'2023', title:'Primeiro Curso Técnico', sub:'Instituição / Plataforma', desc:'Conte sobre cursos, bootcamps, projetos ou experiências que marcaram sua jornada.'},
+    {date:'2024', title:'Projeto Pessoal', sub:'Desenvolvimento independente', desc:'Descreva um projeto que você desenvolveu e o que aprendeu com ele.'},
+  ],
+  hobbies: [
+    {e:'🎮', n:'Games'},{e:'🎵', n:'Música'},{e:'📚', n:'Leitura'},
+    {e:'💻', n:'Código'},{e:'🎬', n:'Filmes'},{e:'🌐', n:'Internet'},
+  ],
+  goals: [
+    {i:'🚀', t:'Carreira em Tech', d:'Descreva onde você quer chegar profissionalmente. Qual cargo, empresa ou tipo de trabalho você almeja?'},
+    {i:'🎓', t:'Educação Contínua', d:'Quais cursos, graduações ou certificações você planeja conquistar nos próximos anos?'},
+    {i:'🌍', t:'Impacto Real', d:'Qual legado você quer deixar? Como a tecnologia pode te ajudar a impactar o mundo ao seu redor?'},
+  ],
+  links: [
+    {e:'💼', l:'LinkedIn', u:'https://linkedin.com/in/seuperfil'},
+    {e:'🐙', l:'GitHub', u:'https://github.com/seuusuario'},
+    {e:'📧', l:'E-mail', u:'mailto:seu@email.com'},
+    {e:'📱', l:'Instagram', u:'https://instagram.com/seuusuario'},
+  ]
+};
+
+let skillsData=[], tlData=[], hobbiesData=[], goalsData=[], linksData=[];
+
+function getSaved(){
+  try{ const s=localStorage.getItem('portfolio_pro'); return s?JSON.parse(s):null; }catch{return null;}
+}
+
+function saveAll(){
+  const d={
+    heroName: v('hero-name'), heroTitle: v('hero-title'), heroRole: v('hero-role'),
+    heroQuote: v('hero-quote'),
+    stat1n: v('stat1-num'), stat1l: v('stat1-label'),
+    stat2n: v('stat2-num'), stat2l: v('stat2-label'),
+    aboutName: v('about-name'), aboutLocal: v('about-local'),
+    aboutArea: v('about-area'), aboutAvail: v('about-avail'),
+    aboutBio: v('about-bio'), aboutRoutine: v('about-routine'),
+    badgeNum: v('badge-num'),
+    ccArea: v('cc-area'), ccLocal: v('cc-local'), ccStatus: v('cc-status'),
+    contactIntro: v('contact-intro'),
+    photo: document.getElementById('avatar-box').dataset.photo||'',
+    skills: collectSkills(),
+    timeline: collectTimeline(),
+    hobbies: collectHobbies(),
+    goals: collectGoals(),
+    links: collectLinks(),
+  };
+  localStorage.setItem('portfolio_pro', JSON.stringify(d));
+  const el=document.getElementById('save-status');
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),3000);
+}
+
+function v(id){ const el=document.getElementById(id); return el?el.value:''; }
+function sv(id,val){ const el=document.getElementById(id); if(el)el.value=val; }
+
+function loadSaved(){
+  const s=getSaved(); if(!s) return null;
+  sv('hero-name',s.heroName); sv('hero-title',s.heroTitle); sv('hero-role',s.heroRole);
+  sv('hero-quote',s.heroQuote);
+  sv('stat1-num',s.stat1n); sv('stat1-label',s.stat1l);
+  sv('stat2-num',s.stat2n); sv('stat2-label',s.stat2l);
+  sv('about-name',s.aboutName); sv('about-local',s.aboutLocal);
+  sv('about-area',s.aboutArea); sv('about-avail',s.aboutAvail);
+  sv('about-bio',s.aboutBio); sv('about-routine',s.aboutRoutine);
+  sv('badge-num',s.badgeNum);
+  sv('cc-area',s.ccArea); sv('cc-local',s.ccLocal); sv('cc-status',s.ccStatus);
+  sv('contact-intro',s.contactIntro);
+  if(s.photo){ setPhoto(s.photo); }
+  return s;
+}
+
+function loadPhoto(e){
+  const f=e.target.files[0]; if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>setPhoto(ev.target.result);
+  r.readAsDataURL(f);
+}
+function setPhoto(src){
+  const box=document.getElementById('avatar-box');
+  box.dataset.photo=src;
+  let img=box.querySelector('img');
+  if(!img){img=document.createElement('img');box.appendChild(img);}
+  img.src=src;
+  box.querySelector('svg').style.display='none';
+  box.querySelector('.photo-hint').style.display='none';
+}
+
+/* SKILLS */
+function renderSkills(data){
+  const c=document.getElementById('skills-container');
+  c.innerHTML='';
+  data.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='skill-row';
+    d.innerHTML=`
+      <button class="skill-del" onclick="delSkill(${i})">✕ remover</button>
+      <div class="skill-row-left">
+        <input class="skill-name-inp" value="${s.name}" onchange="skillsData[${i}].name=this.value" />
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-lvl="${s.lvl}" style="width:0"></div></div>
+      </div>
+      <div><input class="skill-pct-inp" type="number" min="0" max="100" value="${s.lvl}" onchange="skillsData[${i}].lvl=+this.value;updateBar(${i},+this.value)" />%</div>`;
+    c.appendChild(d);
+  });
+  setTimeout(()=>{
+    document.querySelectorAll('.skill-bar-fill').forEach(b=>b.style.width=b.dataset.lvl+'%');
+  },400);
+}
+function updateBar(i,v){ const bars=document.querySelectorAll('.skill-bar-fill'); if(bars[i])bars[i].style.width=v+'%'; }
+function collectSkills(){ return skillsData; }
+function addSkill(){ skillsData.push({name:'Nova Skill',lvl:50}); renderSkills(skillsData); }
+function delSkill(i){ skillsData.splice(i,1); renderSkills(skillsData); }
+
+/* TIMELINE */
+function renderTimeline(data){
+  const c=document.getElementById('timeline-container');
+  c.innerHTML='';
+  data.forEach((t,i)=>{
+    const d=document.createElement('div');
+    d.className='tl-item';
+    d.innerHTML=`
+      <button class="tl-del" onclick="delTl(${i})">✕ remover</button>
+      <input class="tl-date-inp" value="${t.date}" onchange="tlData[${i}].date=this.value" />
+      <div class="tl-body">
+        <input class="tl-title-inp" value="${t.title}" onchange="tlData[${i}].title=this.value" />
+        <input class="tl-sub-inp" value="${t.sub}" onchange="tlData[${i}].sub=this.value" />
+        <textarea class="tl-desc-inp" onchange="tlData[${i}].desc=this.value">${t.desc}</textarea>
+      </div>`;
+    c.appendChild(d);
+  });
+}
+function collectTimeline(){
+  return Array.from(document.querySelectorAll('.tl-item')).map(el=>({
+    date: el.querySelector('.tl-date-inp')?.value||'',
+    title: el.querySelector('.tl-title-inp')?.value||'',
+    sub: el.querySelector('.tl-sub-inp')?.value||'',
+    desc: el.querySelector('.tl-desc-inp')?.value||'',
+  }));
+}
+function addTimeline(){ tlData.push({date:'2025',title:'Novo Marco',sub:'Organização / Plataforma',desc:'Descreva esta experiência.'}); renderTimeline(tlData); }
+function delTl(i){ tlData.splice(i,1); renderTimeline(tlData); }
+
+/* HOBBIES */
+function renderHobbies(data){
+  const c=document.getElementById('hobbies-container');
+  c.innerHTML='';
+  data.forEach((h,i)=>{
+    const d=document.createElement('div');
+    d.className='hobby-card';
+    d.innerHTML=`
+      <button class="hobby-del" onclick="delHobby(${i})">✕</button>
+      <input class="hobby-emoji-inp" value="${h.e}" onchange="hobbiesData[${i}].e=this.value" title="Cole um emoji" />
+      <input class="hobby-label-inp" value="${h.n}" onchange="hobbiesData[${i}].n=this.value" />`;
+    c.appendChild(d);
+  });
+}
+function collectHobbies(){
+  return Array.from(document.querySelectorAll('.hobby-card')).map(c=>({
+    e: c.querySelector('.hobby-emoji-inp')?.value||'',
+    n: c.querySelector('.hobby-label-inp')?.value||'',
+  }));
+}
+function addHobby(){ hobbiesData.push({e:'⭐',n:'Novo Hobby'}); renderHobbies(hobbiesData); }
+function delHobby(i){ hobbiesData.splice(i,1); renderHobbies(hobbiesData); }
+
+/* GOALS */
+function renderGoals(data){
+  const c=document.getElementById('goals-container');
+  c.innerHTML='';
+  data.forEach((g,i)=>{
+    const d=document.createElement('div');
+    d.className='goal-card';
+    d.innerHTML=`
+      <button class="goal-del" onclick="delGoal(${i})">✕ remover</button>
+      <input class="goal-icon-inp" value="${g.i}" onchange="goalsData[${i}].i=this.value" />
+      <input class="goal-title-inp" value="${g.t}" onchange="goalsData[${i}].t=this.value" />
+      <textarea class="goal-desc-inp" onchange="goalsData[${i}].d=this.value">${g.d}</textarea>`;
+    c.appendChild(d);
+  });
+  const add=document.createElement('button');
+  add.className='add-goal-btn';
+  add.onclick=addGoal;
+  add.textContent='+ Adicionar objetivo';
+  c.appendChild(add);
+}
+function collectGoals(){
+  return goalsData;
+}
+function addGoal(){ goalsData.push({i:'🎯',t:'Novo Objetivo',d:'Descreva seu objetivo aqui.'}); renderGoals(goalsData); }
+function delGoal(i){ goalsData.splice(i,1); renderGoals(goalsData); }
+
+/* LINKS */
+function renderLinks(data){
+  const c=document.getElementById('links-container');
+  c.innerHTML='';
+  data.forEach((l,i)=>{
+    const d=document.createElement('div');
+    d.className='link-row';
+    d.innerHTML=`
+      <input class="link-emoji-inp" value="${l.e}" onchange="linksData[${i}].e=this.value" />
+      <input class="link-label-inp" value="${l.l}" onchange="linksData[${i}].l=this.value" />
+      <input class="link-url-inp" value="${l.u}" onchange="linksData[${i}].u=this.value" />
+      <button class="link-del" onclick="delLink(${i})">✕</button>`;
+    c.appendChild(d);
+  });
+}
+function collectLinks(){
+  return Array.from(document.querySelectorAll('.link-row')).map(r=>({
+    e: r.querySelector('.link-emoji-inp')?.value||'',
+    l: r.querySelector('.link-label-inp')?.value||'',
+    u: r.querySelector('.link-url-inp')?.value||'',
+  }));
+}
+function addLink(){ linksData.push({e:'🔗',l:'Novo Link',u:'https://'}); renderLinks(linksData); }
+function delLink(i){ linksData.splice(i,1); renderLinks(linksData); }
+
+/* INIT */
+(function(){
+  const s=loadSaved();
+  skillsData=(s&&s.skills)||DEF.skills;
+  tlData=(s&&s.timeline)||DEF.timeline;
+  hobbiesData=(s&&s.hobbies)||DEF.hobbies;
+  goalsData=(s&&s.goals)||DEF.goals;
+  linksData=(s&&s.links)||DEF.links;
+  renderSkills(skillsData);
+  renderTimeline(tlData);
+  renderHobbies(hobbiesData);
+  renderGoals(goalsData);
+  renderLinks(linksData);
+})();
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* SKILL BARS ON SCROLL */
+const skillObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-bar-fill').forEach(b=>b.style.width=b.dataset.lvl+'%');
+    }
+  });
+},{threshold:0.2});
+const skillSec=document.getElementById('habilidades');
+if(skillSec) skillObs.observe(skillSec);
+
+/* AUTO SAVE */
+document.addEventListener('input',()=>{
+  clearTimeout(window._at);
+  window._at=setTimeout(saveAll,2500);
+});
+</script>
+</body>
+</html>
