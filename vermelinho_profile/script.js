@@ -11,14 +11,14 @@ const SKILLS = [
 ];
 
 const TIMELINE = [
-  {date:'2024', title:'InÃ­cio na ProgramaÃ§Ã£o',  sub:'Primeiro contato com cÃ³digo',      desc:'Pequenas aulas com vÃ­deos do Gustavo Guanabara e o meu professor querido Eduardo Lazaro, despertando minha paixÃ£o pela tecnologia e programaÃ§Ã£o.'},
-  {date:'2025', title:'Primeiro Curso TÃ©cnico', sub:'InstituiÃ§Ã£o / Plataforma',          desc:'Fiz provas e evolui na Ã¡rea, chegando a ganhar a premiaÃ§Ã£o do evento do CODE EXPERIENCE de 2025 (um evento que aconteceu na UNIMAR) e assim tambÃ©m criando projetos e melhorando a experiÃªncia.'},
-  {date:'2026', title:'Projeto Pessoal',        sub:'Desenvolvimento independente',      desc:'A criaÃ§Ã£o de um site aonde envovia um projeto que precisava ter front-end, back-end e banco de dados (MySQL). Que isso me fez aprender varias linguas de programaÃ§Ã£o, como PYTHON, CSS, JS, HTML, SQL e etc...'},
+  {date:'2024', title:'Início na Programação',  sub:'Primeiro contato com código',      desc:'Pequenas aulas com vídeos do Gustavo Guanabara e o meu professor querido Eduardo Lazaro, despertando minha paixão pela tecnologia e programação.'},
+  {date:'2025', title:'Primeiro Curso Técnico', sub:'Instituição / Plataforma',          desc:'Fiz provas e evolui na área, chegando a ganhar a premiação do evento do CODE EXPERIENCE de 2025 (um evento que aconteceu na UNIMAR) e assim também criando projetos e melhorando a experiência.'},
+  {date:'2026', title:'Projeto Pessoal',        sub:'Desenvolvimento independente',      desc:'A criação de um site aonde envovia um projeto que precisava ter front-end, back-end e banco de dados (MySQL). Que isso me fez aprender varias linguas de programação, como PYTHON, CSS, JS, HTML, SQL e etc...'},
 ];
 
 const HOBBIES = [
-  {e:'ðŸŽ®', n:'Games'}, {e:'ðŸŽµ', n:'MÃºsica'}, {e:'ðŸ“š', n:'Leitura'},
-  {e:'ðŸ’»', n:'CÃ³digo'},{e:'ðŸŽ¬', n:'Filmes'}, {e:'ðŸŒ', n:'Internet'}, {e:'ðŸ', n:'VÃ´lei'},
+  {e:'ðŸŽ®', n:'Games'}, {e:'ðŸŽµ', n:'Música'}, {e:'ðŸ“š', n:'Leitura'},
+  {e:'ðŸ’»', n:'Código'},{e:'ðŸŽ¬', n:'Filmes'}, {e:'ðŸŒ', n:'Internet'}, {e:'ðŸ', n:'Vôlei'},
 ];
 
 const GOALS = [
